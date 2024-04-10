@@ -1,8 +1,18 @@
 """Численное интегрирование"""
+"""
+----------------- Список литературы -----------------
+1. https://ru.wikipedia.org/wiki/Численное_интегрирование
+2. https://ru.wikipedia.org/wiki/Формула_Симпсона#Составная_формула_(формула_Котеса)
+3. https://docs.yandex.ru/docs/view?url=ya-disk-public%3A%2F%2FElnF7HEgAl4z%2FmMITO%2BeDH%2FMcPblSzaO9pX5T%2FQ4vMGj6%2
+FoxqAT7iGQGAE%2BpTTWQq%2FJ6bpmRyOJonT3VoXnDag%3D%3D%3A%2FБояршинов%20МГ%2C%202008%20--%20Методы%20Выч.Мат.%20
+(noЭО%2C%20OCR%2C%20это%20Численные%20Методы%20ч1%2C2%2C3%20под%20одной%20обложкой).pdf&name=Бояршинов%20МГ%2C%202008%20--%20
+Методы%20Выч.Мат.%20(noЭО%2C%20OCR%2C%20это%20Численные%20Методы%20ч1%2C2%2C3%20под%20одной%20обложкой).pdf
+----> глава 7, страница 139
+"""
 
 import math
-import numpy
-from matplotlib import pyplot
+import numpy as np
+from matplotlib import pyplot as plt
 
 
 def f(x):  # функция
@@ -47,14 +57,14 @@ def main():
     # начальные значения
     start = 0
     end = math.pi
-    steps = 1000  # кол-во отрезков
+    steps = 1000  # кол-во отрезков, шагов
 
     print(f'Метод прямоугольников:\t{method_rectangle(steps, start, end)}')
     print(f'Метод трапеций:\t\t\t{method_trapezoid(steps, start, end)}')
     print(f'Метод Котеса:\t\t\t{method_kotes(steps, start, end)}')
 
     # правильные координаты
-    x = numpy.linspace(0, 2 * end, steps)
+    x = np.linspace(0, 2 * end, steps)
     y = []
     for i in x:
         y.append(1 - math.cos(i))
@@ -69,15 +79,35 @@ def main():
         y_kotes.append(method_kotes(steps, 0, i) - (1 - math.cos(i)))
 
     # построение графиков
-    # pyplot.plot(x, y, label = "sin(x)")
-    pyplot.plot(x, y_rectangle, label="Погрешность методом прямоугольников")
-    pyplot.plot(x, y_trapezoid, label="Погрешность методом трапеций")
-    pyplot.plot(x, y_kotes, label="Погрешность методом Котеса")
-    pyplot.xlabel('x')
-    pyplot.ylabel('y')
-    pyplot.legend()
-    pyplot.grid()
-    pyplot.show()
+    # позволяет вывести несколько графиков в одном окне subplot(2 - строки, 2 - столбцы, 1 - индекс позиции графика)
+    plt.subplot(2, 2, 1)
+    plt.plot(x, y_rectangle, label="Погрешность методом прямоугольников")   # размещение графика
+    plt.xlabel('axis x')                                                          # подпись оси абсцисс
+    plt.ylabel('axis y')                                                          # подпись оси ординат
+    plt.legend()                                                                  # вывод легенды (название графика)
+    plt.grid()                                                                    # сетка в графике
+
+    plt.subplot(2, 2, 2)
+    plt.plot(x, y_trapezoid, label="Погрешность методом трапеций")
+    plt.xlabel('axis x')
+    plt.ylabel('axis y')
+    plt.legend()
+    plt.grid()
+
+    plt.subplot(2, 2, 3)
+    plt.plot(x, y_kotes, label="Погрешность методом Котеса")
+    plt.xlabel('axis x')
+    plt.ylabel('axis y')
+    plt.legend()
+    plt.grid()
+
+    plt.subplot(2, 2, 4)
+    plt.plot(x, y, label="Оригинальный график sin(x)")
+    plt.xlabel('axis x')
+    plt.ylabel('axis y')
+    plt.legend()
+    plt.grid()
+    plt.show()
 
 
 if __name__ == "__main__":
