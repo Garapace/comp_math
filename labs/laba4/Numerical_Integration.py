@@ -1,3 +1,6 @@
+import numpy as np
+from matplotlib import pyplot as plt
+
 """Численное интегрирование"""
 """
 ----------------- Список литературы -----------------
@@ -10,13 +13,9 @@ FoxqAT7iGQGAE%2BpTTWQq%2FJ6bpmRyOJonT3VoXnDag%3D%3D%3A%2FБояршинов%20М
 ----> глава 7, страница 139
 """
 
-import math
-import numpy as np
-from matplotlib import pyplot as plt
-
 
 def f(x):  # функция
-    return math.sin(x)
+    return np.sin(x)
 
 
 def method_rectangle(n, a, b):    # метод прямоугольников
@@ -56,7 +55,7 @@ def method_kotes(n, a, b):  # метод Котеса
 def main():
     # начальные значения
     start = 0
-    end = math.pi
+    end = np.pi
     steps = 1000  # кол-во отрезков, шагов
 
     print(f'Метод прямоугольников:\t{method_rectangle(steps, start, end)}')
@@ -67,16 +66,16 @@ def main():
     x = np.linspace(0, 2 * end, steps)
     y = []
     for i in x:
-        y.append(1 - math.cos(i))
+        y.append(1 - np.cos(i))
 
     # погрешность различными методами
     y_rectangle = []
     y_trapezoid = []
     y_kotes = []
     for i in x:
-        y_rectangle.append(method_rectangle(steps, 0, i) - (1 - math.cos(i)))
-        y_trapezoid.append(method_trapezoid(steps, 0, i) - (1 - math.cos(i)))
-        y_kotes.append(method_kotes(steps, 0, i) - (1 - math.cos(i)))
+        y_rectangle.append(method_rectangle(steps, 0, i) - (1 - np.cos(i)))
+        y_trapezoid.append(method_trapezoid(steps, 0, i) - (1 - np.cos(i)))
+        y_kotes.append(method_kotes(steps, 0, i) - (1 - np.cos(i)))
 
     # построение графиков
     # позволяет вывести несколько графиков в одном окне subplot(2 - строки, 2 - столбцы, 1 - индекс позиции графика)
