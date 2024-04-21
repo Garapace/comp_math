@@ -6,10 +6,10 @@ from matplotlib import pyplot as plt
 ----------------- Список литературы -----------------
 1. https://ru.wikipedia.org/wiki/Численное_интегрирование
 2. https://ru.wikipedia.org/wiki/Формула_Симпсона#Составная_формула_(формула_Котеса)
-3. https://docs.yandex.ru/docs/view?url=ya-disk-public%3A%2F%2FElnF7HEgAl4z%2FmMITO%2BeDH%2FMcPblSzaO9pX5T%2FQ4vMGj6%2
-FoxqAT7iGQGAE%2BpTTWQq%2FJ6bpmRyOJonT3VoXnDag%3D%3D%3A%2FБояршинов%20МГ%2C%202008%20--%20Методы%20Выч.Мат.%20
-(noЭО%2C%20OCR%2C%20это%20Численные%20Методы%20ч1%2C2%2C3%20под%20одной%20обложкой).pdf&name=Бояршинов%20МГ%2C%202008%20--%20
-Методы%20Выч.Мат.%20(noЭО%2C%20OCR%2C%20это%20Численные%20Методы%20ч1%2C2%2C3%20под%20одной%20обложкой).pdf
+3. https://docs.yandex.ru/docs/view?url=ya-disk-public%3A%2F%2FElnF7HEgAl4z%2FmMITO%2BeDH%2FMcPblSzaO9pX5T%2FQ4vMGj6%2F
+oxqAT7iGQGAE%2BpTTWQq%2FJ6bpmRyOJonT3VoXnDag%3D%3D%3A%2FБояршинов%20МГ%2C%202008%20--%20Методы%20Выч.Мат.%20(noЭО%2C%20O
+CR%2C%20это%20Численные%20Методы%20ч1%2C2%2C3%20под%20одной%20обложкой).pdf&name=Бояршинов%20МГ%2C%202008%20--%20Методы
+%20Выч.Мат.%20(noЭО%2C%20OCR%2C%20это%20Численные%20Методы%20ч1%2C2%2C3%20под%20одной%20обложкой).pdf
 ----> глава 7, страница 139
 """
 
