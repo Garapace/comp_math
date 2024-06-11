@@ -36,7 +36,7 @@ def main():
 
     x_values = np.linspace(-2, 2, steps)
     ch_values = [(b + a) / 2 + ((b - a) / 2) * np.cos(((2 * i + 1) / (2 * (steps + 1))) * np.pi)
-                 for i in range(steps)]  # значения функции по оси ординат
+                 for i in range(steps)]       # значения функции по оси ординат
     y_values = np.abs(ch_values)              # значения функции по оси абсцисс
 
     print(f"x = {x_values}\ny = {y_values}")
